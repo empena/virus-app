@@ -3,17 +3,20 @@ import { Statistic } from 'semantic-ui-react'
 import { Card } from 'semantic-ui-react'
 
 
-const Virus = (props) => (
+const Virus = ({ name, description, statisticValue, statisticLabel }) => (
+  <div>
   <Card>
-    <Card.Content header={props.name} />
-    <Card.Content description={props.description} />
+    <Card.Content header={name} />
+    <Card.Content description={description} />
     <Card.Content extra>
       <Statistic>
-        <Statistic.Value>{props.statisticValue}</Statistic.Value>
-        <Statistic.Label>{props.statisticLabel}</Statistic.Label>
+        <Statistic.Value>{statisticValue}</Statistic.Value>
+        <Statistic.Label>{statisticLabel}</Statistic.Label>
       </Statistic>
     </Card.Content>
   </Card>
+  < br/>
+  </div>
 );
 
 export default Virus;
