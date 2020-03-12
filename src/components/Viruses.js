@@ -1,5 +1,6 @@
 import React from 'react';
 import Virus from './Virus';
+import VirusForm from './VirusForm'
 
 class Viruses extends React.Component {
 
@@ -20,19 +21,31 @@ class Viruses extends React.Component {
         statisticLabel: 'People Dead',
       },
     ]
+  };
+
+  getId = () => {
+    return Math.floor((1+Math.random()) * 10000);
+  };
+
+  addVirus = (virusData) => {
+    let virus = { id: this.getId (), ...virusData};
+    this.setState({ viruses: [virus, ...this.state.viruses]})
   }
+  //form
   
   mapViruses = () => {
-    return this.state.viruses.map( virus =>
+    return this.state.viruses.map( virus => (
+      // console.log('inside map')
       <Virus key={virus.id} virus={virus} {...virus} />
-    )
-  }
+    ))
+  };
 
 
-  render () {
+  render() {
     return (
       <>
-      <h1>viruses</h1>
+      <h1>Viruses</h1>
+      <VirusForm addVirus={this.addVirus} /> < br/>
       <div> {this.mapViruses()}</div>
       </>
     )
