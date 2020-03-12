@@ -23,7 +23,7 @@ class Viruses extends React.Component {
   }
   
   mapViruses = () => {
-    this.state.viruses.map( virus =>
+    return this.state.viruses.map( virus =>
       <Virus key={virus.id} virus={virus} {...virus} />
     )
   }
