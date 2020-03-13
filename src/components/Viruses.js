@@ -45,7 +45,9 @@ class Viruses extends React.Component {
     return (
       <>
       <h1>Viruses</h1>
+      <h2>Add a New Virus:</h2>
       <VirusForm addVirus={this.addVirus} /> < br/>
+      <h2>All Viruses:</h2>
       <div> {this.mapViruses()}</div>
       </>
     )
