@@ -12,16 +12,18 @@ class VirusForm extends React.Component {
 
   handleChange = (e) => {
     this.setState ({ [e.target.name] : e.target.value })
-    console.log('printed')
+    // console.log('printed')
   }
 
   handleSubmit = (e) => {
     e.preventDefault()
-  }
+    this.props.addVirus(this.state);
+    this.setState({ name: "", description: "", statisticValue: 0, statisticLabel: "", });
+  };
 
   render() {
     return (
-      <Form>
+      <Form onSubmit={this.handleSubmit}>
         <Form.Field>
           <label>Virus Name</label>
           <input
