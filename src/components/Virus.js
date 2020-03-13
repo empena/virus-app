@@ -31,7 +31,7 @@ class Virus extends React.Component {
                 <Button icon color="blue" onClick={this.toggleEdit}>
                   <Icon name="edit" />
                 </Button>
-                <Button icon color="red">
+                <Button icon color="red" onClick={() => this.props.deleteVirus(this.props.id)}>
                   <Icon name="delete" />
                 </Button>
               </Card.Content>
