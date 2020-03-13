@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Checkbox, Form } from 'semantic-ui-react';
+import { Button, Form, Header } from 'semantic-ui-react';
 
 class VirusForm extends React.Component {
 
@@ -17,7 +17,6 @@ class VirusForm extends React.Component {
 
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value })
-    // console.log('printed')
   };
 
   handleSubmit = (e) => {
@@ -31,19 +30,9 @@ class VirusForm extends React.Component {
     this.setState({ name: "", description: "", statisticValue: 0, statisticLabel: "", });
   }
 
-
-
-
-
-  handleSubmit = (e) => {
-    e.preventDefault();
-    this.props.addVirus(this.state);
-    this.setState({ name: "", description: "", statisticValue: 0, statisticLabel: "", });
-  };
-
-
   render() {
     return (
+      
       <Form onSubmit={this.handleSubmit}>
         <Form.Field>
           <label>Virus Name</label>
@@ -81,7 +70,7 @@ class VirusForm extends React.Component {
             onChange={this.handleChange}
           />
         </Form.Field>
-        <Button type='submit' color="green">Submit</Button>
+        <Button type='submit' color="blue">Submit</Button>
       </Form>
     )
   };

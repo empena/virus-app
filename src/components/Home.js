@@ -1,5 +1,5 @@
 import React from 'react';
-import { Segment, Image, Header, Divider } from 'semantic-ui-react'
+import { Image, Header, Divider } from 'semantic-ui-react'
 import BillboardOne from './BillboardOne.png';
 import BillboardTwo from './BillboardTwo.png';
 import BillboardThree from './BillboardThree.png';
