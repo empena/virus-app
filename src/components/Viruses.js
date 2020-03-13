@@ -12,6 +12,7 @@ class Viruses extends React.Component {
         description: 'owthwkfnwklrgkrmglermgle',
         statisticValue: 100,
         statisticLabel: 'People Dead',
+        editing: false,
       },
       {
         id: 2,
@@ -19,6 +20,7 @@ class Viruses extends React.Component {
         description: 'owthwofkwpkfoiwlermgle',
         statisticValue: 1000,
         statisticLabel: 'People Dead',
+        editing: false,
       },
     ]
   };
@@ -32,11 +34,20 @@ class Viruses extends React.Component {
     this.setState({ viruses: [virus, ...this.state.viruses]})
   }
   //form
+
+  editVirus = (virusData) => {
+    const viruses = this.state.viruses.map( virus => {
+      if (virus.id === virusData.id)
+        return virusData;
+      return virus
+    });
+    this.setState({ viruses, });
+  }
   
   mapViruses = () => {
     return this.state.viruses.map( virus => (
       // console.log('inside map')
-      <Virus key={virus.id} virus={virus} {...virus} />
+      <Virus key={virus.id} virus={virus} {...virus} editVirus={this.editVirus} toggleEdit={this.toggleEdit} />
     ))
   };
 
