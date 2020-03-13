@@ -1,6 +1,8 @@
 import React from 'react';
 import Virus from './Virus';
 import VirusForm from './VirusForm'
+import { Header, } from "semantic-ui-react";
+
 
 class Viruses extends React.Component {
 
@@ -47,7 +49,7 @@ class Viruses extends React.Component {
   mapViruses = () => {
     return this.state.viruses.map( virus => (
       // console.log('inside map')
-      <Virus key={virus.id} virus={virus} {...virus} editVirus={this.editVirus} toggleEdit={this.toggleEdit} />
+      <Virus key={virus.id} virus={virus} {...virus} editVirus={this.editVirus} addVirus={this.addVirus} />
     ))
   };
 
@@ -55,7 +57,7 @@ class Viruses extends React.Component {
   render() {
     return (
       <>
-      <h1>Viruses</h1>
+      <Header as="h1">Viruses</Header>
       <h2>Add a New Virus:</h2>
       <VirusForm addVirus={this.addVirus} /> < br/>
       <h2>All Viruses:</h2>

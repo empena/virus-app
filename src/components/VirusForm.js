@@ -26,7 +26,7 @@ class VirusForm extends React.Component {
       this.props.editVirus({ id: this.props.id, ...this.state });
       this.props.toggleEdit()
     } else {
-      this.props.add(this.state);
+      this.props.addVirus(this.state);
     }
     this.setState({ name: "", description: "", statisticValue: 0, statisticLabel: "", });
   }
