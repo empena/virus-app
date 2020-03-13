@@ -2,6 +2,7 @@ import React from 'react';
 import { Statistic, Button, Icon } from 'semantic-ui-react';
 import { Card } from 'semantic-ui-react';
 import VirusForm from './VirusForm';
+import Viruses from './Viruses';
 
 
 

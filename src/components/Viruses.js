@@ -9,7 +9,7 @@ class Viruses extends React.Component {
     viruses: [
       {
         id: 1,
-        name: "Cornovirus",
+        name: "Coronavirus (COVID-19)",
         description: 'Group of viruses that cause diseases in mammals and birds. In humans, coronaviruses cause respiratory tract infections that are typically mild, such as some cases of the common cold.',
         statisticValue: 1080,
         statisticLabel: 'People Dead',
