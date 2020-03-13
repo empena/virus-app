@@ -3,7 +3,6 @@ import Virus from './Virus';
 import VirusForm from './VirusForm'
 import { Header, } from "semantic-ui-react";
 
-
 class Viruses extends React.Component {
 
   state = {
