@@ -10,6 +10,8 @@ class Virus extends React.Component {
 
   toggleEdit = () => this.setState({ editing: !this.state.editing, });
 
+
+
   render() {
     return (
       <div>
@@ -26,7 +28,7 @@ class Virus extends React.Component {
                   <Statistic.Label>{this.props.statisticLabel}</Statistic.Label>
                 </Statistic>
                 <Button icon color="blue" onClick={this.toggleEdit}>EDIT</Button>
-                <Button icon color="red">DELETE</Button>
+                <Button icon color="red" onClick={console.log('click')}>DELETE</Button>
               </Card.Content>
             </Card>
         }

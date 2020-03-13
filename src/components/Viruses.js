@@ -28,28 +28,36 @@ class Viruses extends React.Component {
   };
 
   getId = () => {
-    return Math.floor((1+Math.random()) * 10000);
+    return Math.floor((1 + Math.random()) * 10000);
   };
 
   addVirus = (virusData) => {
-    let virus = { id: this.getId (), ...virusData};
-    this.setState({ viruses: [virus, ...this.state.viruses]})
+    let virus = { id: this.getId(), ...virusData };
+    this.setState({ viruses: [virus, ...this.state.viruses] })
   }
   //form
 
+  deleteVirus = (virus) => {
+    const newVirusArray = this.state.viruses.map((v) => {
+      if (v.id != virus.id)
+        return virus;
+    });
+    this.setState({ newVirusArray });
+  };
+
   editVirus = (virusData) => {
-    const viruses = this.state.viruses.map( virus => {
+    const viruses = this.state.viruses.map(virus => {
       if (virus.id === virusData.id)
         return virusData;
       return virus
     });
     this.setState({ viruses, });
   }
-  
+
   mapViruses = () => {
-    return this.state.viruses.map( virus => (
+    return this.state.viruses.map(virus => (
       // console.log('inside map')
-      <Virus key={virus.id} virus={virus} {...virus} editVirus={this.editVirus} addVirus={this.addVirus} />
+      <Virus key={virus.id} virus={virus} {...virus} editVirus={this.editVirus} addVirus={this.addVirus} deleteVirus={this.deleteVirus} />
     ))
   };
 
@@ -57,11 +65,11 @@ class Viruses extends React.Component {
   render() {
     return (
       <>
-      <Header as="h1">Viruses</Header>
-      <h2>Add a New Virus:</h2>
-      <VirusForm addVirus={this.addVirus} /> < br/>
-      <h2>All Viruses:</h2>
-      <div> {this.mapViruses()}</div>
+        <Header as="h1">Viruses</Header>
+        <h2>Add a New Virus:</h2>
+        <VirusForm addVirus={this.addVirus} /> < br />
+        <h2>All Viruses:</h2>
+        <div> {this.mapViruses()}</div>
       </>
     )
   }
